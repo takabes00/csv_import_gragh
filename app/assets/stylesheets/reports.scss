@@ -1,0 +1,73 @@
+.button-search{
+  margin-left: auto;
+}
+
+.table1{
+  border-collapse: collapse; border: 1px solid black;height: 900px;display: inline-block;height: 100%;border: 1; align:center;
+}
+
+.table1 th{
+  padding:0.5em; border:1px solid black; color: white; background-color:grey;white-space: nowrap;text-align: left;
+}
+.table1 td{
+  border:1px solid black; padding-right:20px; padding-left:20px;text-align: center;
+}
+
+.table2{
+  border-collapse: collapse; table-layout: fixed;text-align: left;
+}
+
+.table2 th{
+  padding:0.5em; border:1px dotted grey;color: black; background-color:#E6E6FA;min-width:150px;
+}
+.table2 td{
+  padding:0.5em; border:1px dotted grey;margin: 0 auto; padding-right:20px; padding-left:20px;
+}
+
+
+
+
+
+
+  .border{
+    border-bottom:solid; border-width:1px; max-width:900px; color: #E6E6FA;
+  }
+
+  .body{
+    width:1600px; height: 100%;display: table;
+  }
+
+  .navigation{
+    float:left; width: 200px; height:100%; background-color: white;display: table-cell;
+  }
+
+  .content{
+    float: left; width: 1100px; padding-right: 10px; padding-left:10px;display: table-cell;
+  }
+
+  .button{
+  }
+
+
+  .scroll{
+    white-space: nowrap;overflow: scroll;
+  }
+  .result-no{
+    border: 1px black solid; min-width:190px;padding: 5px 0 5px 0;
+  }
+    .result-no th{
+    text-align: left;
+  }
+    .result-no td{
+    align:right;
+  }
+
+.inputlong input[type="text"]{
+      
+    width: 30em
+  
+}
+  #indexbutton{
+text-align: right;border:0px dotted white;border-left: none;
+}
+

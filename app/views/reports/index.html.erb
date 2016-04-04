@@ -1,0 +1,41 @@
+<h1>レポート一覧</h1>
+</br>
+<%= paginate @reports %>
+<table class="table2">
+  <thead>
+    <tr>
+      <th>c5</th>
+      <th>c36</th>
+      <th>c37</th>
+      <th>c38</th>
+      <th>c41</th>
+      <th>c83</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @reports.each do |report| %>
+      <tr>
+        <td><%= report.c5 %></td>
+        <td><%= report.c36 %></td>
+        <td><%= report.c37 %></td>
+        <td><%= report.c38 %></td>
+        <td><%= report.c41 %></td>
+        <td><%= report.c83 %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= paginate @reports %>
+</br>
+<%= form_tag({controller: "reports", action: "import_csv", method: "post"}, {multipart: true}) do %>
+  <div class="field"> 
+    <%= file_field_tag :csv_file %>
+  </div>
+  
+  <div class="actions">
+    <%= submit_tag "csvファイルを読み込む"%>
+  </div>
+<% end %>
+</br>
+<%= link_to 'グラフを表示', graph_index_path %>
