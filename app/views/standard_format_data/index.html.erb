@@ -6,7 +6,10 @@
 <table class="table2">
   <thead>
     <tr>
+      <th>場所</th>
       <th>男女区分</th>
+      <th>生年月日</th>
+      <th>年齢</th>>
       <th>身長</th>
       <th>体重</th>
       <th>総コレステロール</th>
@@ -16,7 +19,10 @@
   <tbody>
     <% @reports.each do |report| %>
       <tr>
+        <td><%= basho(report.医療機関コード) %></td> 
         <td><%= danjo(report.男女区分) %></td>
+        <td><%= report.生年月日 %></td>
+        <td><%= nenrei(report.生年月日) %></td>
         <td><%= report.身長 %></td>
         <td><%= report.体重 %></td>
         <td><%= report.総コレステロール %></td>

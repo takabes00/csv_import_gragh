@@ -1,7 +1,7 @@
 class StandardFormatDataController < ApplicationController
   def index
     @count = StandardFormatDatum.count
-    @reports = StandardFormatDatum.select("男女区分","身長","体重","総コレステロール").page(params[:page]).per(25).order(:"身長")
+    @reports = StandardFormatDatum.select("男女区分","生年月日","医療機関コード","身長","体重","総コレステロール").page(params[:page]).per(25).order(:"身長")
   end
 
   def import_csv_new  
