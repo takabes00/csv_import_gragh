@@ -1,0 +1,39 @@
+<h1>検診結果一覧</h1>
+</br>
+<p>件数 <%= @count %>件</p>
+</br>
+<%= paginate @reports %>
+<table class="table2">
+  <thead>
+    <tr>
+      <th>男女区分</th>
+      <th>身長</th>
+      <th>体重</th>
+      <th>総コレステロール</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @reports.each do |report| %>
+      <tr>
+        <td><%= report.男女区分 %></td>
+        <td><%= report.身長 %></td>
+        <td><%= report.体重 %></td>
+        <td><%= report.総コレステロール %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= paginate @reports %>
+</br>
+<%= form_tag({controller: "standard_format_data", action: "import_csv", method: "post"}, {multipart: true}) do %>
+  <div class="field"> 
+    <%= file_field_tag :csv_file %>
+  </div>
+  
+  <div class="actions">
+    <%= submit_tag "csvファイルを読み込む"%>
+  </div>
+<% end %>
+</br>
+<%= link_to 'グラフを表示', graph_index_path %>

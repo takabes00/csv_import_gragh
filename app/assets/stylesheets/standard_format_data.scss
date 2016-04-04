@@ -9,6 +9,7 @@
 .table1 th{
   padding:0.5em; border:1px solid black; color: white; background-color:grey;white-space: nowrap;text-align: left;
 }
+
 .table1 td{
   border:1px solid black; padding-right:20px; padding-left:20px;text-align: center;
 }
@@ -18,13 +19,25 @@
 }
 
 .table2 th{
-  padding:0.5em; border:1px dotted grey;color: black; background-color:#E6E6FA;min-width:150px;
+  padding:0.5em; border:1px dotted grey;color: black; background-color:#E6E6FA;min-width:150px; 
 }
 .table2 td{
   padding:0.5em; border:1px dotted grey;margin: 0 auto; padding-right:20px; padding-left:20px;
 }
 
+.table3{
+  float:left; width:350px; border:1px; text-align: left;
+  th {
+  background-color:#E6E6FA;
+  }
+}
 
+.table4{
+  float:left; width:300px; border:1px; text-align: left;
+  th {
+  background-color:#E6E6FA;
+  }
+}
 
 
 

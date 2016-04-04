@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class ReportTest < ActiveSupport::TestCase
+class StandardFormatDataControllerTest < ActionController::TestCase
   # test "the truth" do
   #   assert true
   # end

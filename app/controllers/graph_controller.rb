@@ -1,32 +1,34 @@
 class GraphController < ApplicationController
   def index
-  	@reports = Report.all
-  	c5 = Array.new
-  	c36 = Array.new
+    @reports = StandardFormatDatum.select("男女区分","身長","体重","総コレステロール").page(params[:page]).per(25).order(:"身長")
+  	c1 = Array.new
+  	c2 = Array.new
+    c3 = Array.new
+    c4 = Array.new
 
   	@reports.each do |c|
-  		c5 << c.c5
-  		c36 << c.c36
+  		c1 << c.男女区分
+  		c2 << c.身長
+      c3 << c.体重
+      c4 << c.総コレステロール
   	end 
-  	p c5
-  	p c36
 
     @graph = LazyHighCharts::HighChart.new('graph') do |f|
-      f.title(text: 'c5とc36の推移')
-      f.xAxis(categories: c5)
-      f.series(name: 'c36', data: c36, type: 'scatter')
+      f.title(text: '身長の推移')
+      f.xAxis(categories: c1)
+      f.series(name: '身長', data: c2, type: 'scatter')
     end
 
-    @graph1 = LazyHighCharts::HighChart.new('graph') do |f|
-      f.title(text: 'c5とc36の推移')
-      f.xAxis(categories: c5)
-      f.series(name: 'c36', data: c36, type: 'pie')
+    @graph1 = LazyHighCharts::HighChart.new('graph1') do |f|
+      f.title(text: '体重の推移')
+      f.xAxis(categories: c1)
+      f.series(name: '体重', data: c3, type: 'pie')
     end
 
     @graph2 = LazyHighCharts::HighChart.new('graph2') do |f|
-      f.title(text: 'c5とc36の推移')
-      f.xAxis(categories: c5)
-      f.series(name: 'c36', data: c36, type: 'column')
+      f.title(text: '総コレステロールの推移')
+      f.xAxis(categories: c1)
+      f.series(name: '総コレステロール', data: c4, type: 'column')
     end
   end
 end

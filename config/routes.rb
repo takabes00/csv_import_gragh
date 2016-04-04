@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
   get 'graph/index'
-  root 'reports#index'
+  root 'standard_format_data#index'
   
-resources :reports do
-  collection do
-    get 'import_csv_new'
-    post 'import_csv'
+  resources :standard_format_data do
+    collection do
+      get 'import_csv_new'
+      post 'import_csv'
+    end
   end
-end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
