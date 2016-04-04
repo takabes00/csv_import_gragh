@@ -16,7 +16,7 @@
   <tbody>
     <% @reports.each do |report| %>
       <tr>
-        <td><%= report.男女区分 %></td>
+        <td><%= danjo(report.男女区分) %></td>
         <td><%= report.身長 %></td>
         <td><%= report.体重 %></td>
         <td><%= report.総コレステロール %></td>
